@@ -43,7 +43,7 @@ module load cuda/12.1
 source /dtu/projects/RFdiffusion/setup.sh
 module load colabfold
 
-cd /work3/s204116/Projects/BO/af2pipeline
+cd /work3/s204116/Projects/BO/af2_pipeline
 
 input_path="Inputs/bc_max.fasta"
 output_colab_path="outputs/max_test_csntx"
@@ -52,6 +52,6 @@ output_metrics_path="outputs/max_test_csntx.csv"
 colabfold_batch "${input_path}" "${output_colab_path}"
 source /work3/s204116/anaconda3/bin/activate
 conda activate BO
-python extract_AF_metrics.py --colab_input "${input_path}" --colab_output_folder "${output_colab_path}" --output_csv "${output_metrics_path}"
+python Scripts/extract_AF_metrics.py --colab_input "${input_path}" --colab_output_folder "${output_colab_path}" --output_csv "${output_metrics_path}"
 
 
